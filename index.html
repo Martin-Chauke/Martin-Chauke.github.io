@@ -6,6 +6,76 @@
     <title>Martin Chauke - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; overflow-x: hidden; }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 0 20px; }
+        
+        /* Header Responsiveness */
+        header { position: fixed; width: 100%; top: 0; z-index: 1000; background: #fff; transition: 0.3s; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 20px; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+        /* Hero Section Responsiveness */
+        .hero { padding: 120px 0 60px; min-height: 100vh; display: flex; align-items: center; }
+        .hero-content { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-image { flex: 1; min-width: 300px; text-align: center; }
+        .profile-img { max-width: 100%; height: auto; border-radius: 20px; }
+
+        /* About & Experience */
+        .about-content { display: flex; gap: 40px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-image { flex: 1; min-width: 300px; }
+        .about-image img { width: 100%; border-radius: 10px; }
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .skill-item { background: #f4f4f4; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; }
+
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .project-card { border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
+        .project-img { width: 100%; height: 200px; object-fit: cover; }
+        .project-content { padding: 20px; }
+
+        /* Contact Form */
+        .contact-content { display: flex; gap: 50px; flex-wrap: wrap; }
+        .contact-info, .contact-form { flex: 1; min-width: 300px; }
+        .form-group { margin-bottom: 15px; }
+        .form-control { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                flex-direction: column;
+                background: #fff;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { left: 0; }
+            .nav-links li { margin: 15px 0; }
+            .hero-content { flex-direction: column-reverse; text-align: center; }
+            .social-links { justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .container { width: 95%; }
+            .project-card { min-width: 100%; }
+        }
+    </style>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -296,7 +366,7 @@
                 <a href="https://www.kaggle.com/martinchauke13" target="_blank" aria-label="Kaggle" ><i class="fab fa-kaggle"></i></a>
             </div>
             <div class="copyright">
-                &copy; 2023 Martin Chauke. All rights reserved.
+                &copy; 2026 Martin Chauke. All rights reserved.
             </div>
         </div>
     </footer>
