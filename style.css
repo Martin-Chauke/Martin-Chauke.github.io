@@ -7,7 +7,7 @@
 
         :root {
             --primary: #000000;
-            --secondary: #ffffff;
+            --secondary: #fbf3f3;
             --accent: #ff0000;
             --gray: #333333;
             --light-gray: #444444;
@@ -393,7 +393,17 @@
             padding: 30px;
             border-radius: 10px;
             width: 100%;
+            word-wrap: break-word;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+            background-color: #1a1a1a;
         }
 
         .timeline-content h3 {
