@@ -7,119 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --primary-color: #007bff;
-            --text-dark: #333;
-            --text-light: #fff;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; overflow-x: hidden; }
-        .container { width: 90%; max-width: 1200px; margin: auto; padding: 0 20px; }
-        
-        /* Header Responsiveness */
-        header { position: fixed; width: 100%; top: 0; z-index: 1000; background:black; transition: 0.3s; }
-        .header-container { display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 20px; }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
-
-        /* Hero Section Responsiveness */
-        .hero { padding: 120px 0 60px; min-height: 100vh; display: flex; align-items: center; }
-        .hero-content { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
-        .hero-text { flex: 1; min-width: 300px; }
-        .hero-image { flex: 1; min-width: 300px; text-align: center; }
-        .profile-img { width: 300px; height: 300px; object-fit: cover; border-radius: 50%; }
-
-        /* About & Experience */
-        .about-content { display: flex; gap: 40px; flex-wrap: wrap; }
-        .about-text { flex: 1; min-width: 300px; }
-        .about-image { flex: 1; min-width: 300px; }
-        .about-image img { width: 100%; border-radius: 10px; }
-        .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .skill-item { background: rgb(140, 137, 137); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; }
-
-        /* Projects Grid */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .project-card { border: 1px solid black; border-radius: 10px; overflow: hidden; }
-        .project-img { width: 100%; height: 200px; object-fit: cover; }
-        .project-content { padding: 20px; }
-
-        /* Experience Section - Matched to Project Style */
-        .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .experience-card { 
-            border: 1px solid rgb(197, 64, 64); 
-            border-radius: 10px; 
-            overflow: hidden; 
-            display: flex; 
-            flex-direction: column; 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: rgba(0, 0, 0, 0.7);
-        }
-        .experience-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
-            border-color: #f80505;
-        }
-        .experience { background: linear-gradient(rgba(34, 24, 24, 0.9), rgba(243, 239, 239, 0.9)), url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-attachment: fixed; }
-        .experience-content { padding: 20px; flex-grow: 1; }
-
-        .exp-date {
-            display: inline-block;
-            background: #f80505;
-            color: #060606;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .exp-company {
-            font-size: 1rem;
-            color: hsl(0, 92%, 46%);
-            font-weight: 600;
-            margin-bottom: 10px;
-            
-        }
-        
-        .exp-description { color: #fff; font-size: 0.95rem; }
-        
-        .exp-description p {
-            margin-bottom: 10px;
-        }
-        
-        /* Contact Form */
-        .contact-content { display: flex; gap: 50px; flex-wrap: wrap; }
-        .contact-info, .contact-form { flex: 1; min-width: 300px; }
-        .form-group { margin-bottom: 15px; }
-        .form-control { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                flex-direction: column;
-                background: #fff;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-            }
-            .nav-links.active { left: 0; }
-            .nav-links li { margin: 15px 0; }
-            .hero-content { flex-direction: column-reverse; text-align: center; }
-            .social-links { justify-content: center; }
-            
-            .experience-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
-            .container { width: 95%; }
-            .project-card { min-width: 100%; }
+        .profile-img {
+            border-radius: 50%;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -150,14 +40,16 @@
                 <div class="hero-text">
                     <h1>Martin <span>Chauke</span></h1>
                     <p class="title">Data Science & AI/ML enthusiast</p>
-                    I focus on turning data into clear, actionable insight through rigorous analysis and machine learning. My work is grounded in strong fundamentals, methodology and real-world application.
-                    I help people reduce uncertainty, uncover patterns, and make better decisions using evidence-driven systems.</p>
+                    <p>I focus on turning data into clear, actionable insight through rigorous analysis and machine learning. My work is grounded in strong fundamentals, methodology and real-world application. I help people reduce uncertainty, uncover patterns, and make better decisions using evidence-driven systems.</p>
                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/martin-chauke" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    
                         <a href="https://github.com/Martin-Chauke" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.kaggle.com/martinchauke13" target="_blank"><i class="fab fa-kaggle"></i></a>
                     </div>
-                    <a href="#contact" class="btn" style="margin-top: 30px;">Get In Touch</a>
+                    <!-- Hero Button -->
+                    <a href="#contact" class="email-btn">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
                 </div>
                 <div class="hero-image">
                     <img src="Images/Portfolio2.png" alt="Martin Chauke" class="profile-img">
@@ -172,8 +64,7 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>A CS student and Python developer with a focused interest in Data Science and Artificial Intelligence, working at the intersection of data, algorithms, and real-world problem solving. My credibility comes from hands-on project experience—building machine learning models, data pipelines, and API-driven systems using tools like Python, Pandas, NumPy, Scikit-learn, FastAPI, and Flask—where I emphasize correctness, reproducibility, and interpretability over shortcuts. I’m deeply passionate about understanding how models learn, how data behaves, and how insights translate into decisions,
-                        especially in applied domains such as prediction, automation, and intelligent monitoring systems.</p>
+                    <p>A CS student and Python developer with a focused interest in Data Science and Artificial Intelligence, working at the intersection of data, algorithms, and real-world problem solving. My credibility comes from hands-on project experience—building machine learning models, data pipelines, and API-driven systems using tools like Python, Pandas, NumPy, Scikit-learn, FastAPI, and Flask—where I emphasize correctness, reproducibility, and interpretability over shortcuts. I'm deeply passionate about understanding how models learn, how data behaves, and how insights translate into decisions, especially in applied domains such as prediction, automation, and intelligent monitoring systems.</p>
                     <p>What I bring is the ability to turn unstructured or noisy data into structured insights and deployable solutions, helping individuals and teams reduce uncertainty, improve decision-making, and build systems that are both technically sound and practically useful.</p>
                     <p>As I continue learning, I actively work on projects, study open-source implementations, and explore new ideas in AI and machine learning to strengthen both my technical and problem-solving abilities.</p>
                     
@@ -208,7 +99,7 @@
     <!-- Experience Section - SIMPLE CARDS -->
     <section class="experience" id="experience">
         <div class="container">
-            <h2>Experience</h2>
+            <h2 style="color: white;">Experience</h2>
             <div class="experience-grid">
                 <!-- Card 1 -->
                 <div class="experience-card">
@@ -288,10 +179,8 @@
                 <div class="project-card">
                     <img src="Images\MatXsense_dashboard.png" alt="MatXSense-Dashboard" class="project-img">
                     <div class="project-content">
-                        <h3> MatXSense-Dashboard</h3>
-                        <p> MatXSense – AI Digital Twin for Material Degradation
-                            Material degradation monitoring using *virtual IoT sensors* and *machine learning*. 
-                            Predict health, remaining useful life (RUL), and degradation risk for steel, concrete, polymers, and aluminum in different environments—with a *bridge digital twin* and optional sensor-driven inference.</p>
+                        <h3>MatXSense-Dashboard</h3>
+                        <p>MatXSense – AI Digital Twin for Material Degradation. Material degradation monitoring using virtual IoT sensors and machine learning. Predict health, remaining useful life (RUL), and degradation risk for steel, concrete, polymers, and aluminum in different environments—with a bridge digital twin and optional sensor-driven inference.</p>
                         <div class="project-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
@@ -323,9 +212,8 @@
                     <img src="Images/sendemail.png" alt="Send Email Tool" class="project-img">
                     <div class="project-content">
                         <h3>Send Email Tool</h3>
-                        <p> Optimized bulk email tool delivery tool for sending personalized HTML-based emails
-                            that achieved an 80% delivery success rate for over 2000 users.</p>
-                        <p> Automated the process using JInja2 templates and environmental variables for security.</p>
+                        <p>Optimized bulk email tool delivery tool for sending personalized HTML-based emails that achieved an 80% delivery success rate for over 2000 users.</p>
+                        <p>Automated the process using Jinja2 templates and environmental variables for security.</p>
                         <p>Utilized a CSV file to manage recipient data/details.</p>
                         <div class="project-tags">
                             <span class="tag">HTML/CSS/Jinja2</span>
@@ -349,65 +237,39 @@
                         </div>
                     </div>
                 </div>
-
+                
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- SIMPLIFIED Contact Section - NO FORM -->
     <section class="contact" id="contact">
-        <div class="container">
+        <div class="container" >
             <h2>Contact Me</h2>
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Algiers, Algeria</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p><a href="mailto:martinchauke2003@gmail.com" style="color: inherit; text-decoration: none;">martinchauke2003@gmail.com</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm" action="https://formspree.io/f/mlgwepkg" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="Email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="Subject" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="Message" class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <!-- Direct Email CTA -->
+                <div class="direct-email-cta" style="background-color: #323232; border: 0px solid #eaeaea; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 15px; padding: 40px; max-width: 800px; margin: auto; color: white;">
+                    <p style="margin-bottom: 20px; color: white;">
+                        <i class="fas fa-map-marker-alt" style="color: #d6130c; margin-right: 8px;"></i>
+                        <strong>Location:</strong> Algiers, Algeria
+                    </p>
+                    <a href="mailto:martinchauke2003@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Martin,%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect..." class="email-btn">
+                        <i class="fas fa-envelope"></i> Send Email
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-<!--Just and update of the footer, the clickable icons with embedded platform links failed-->
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-logo">Martin<span>Chauke</span></div>
-            <p>In a world full of opinions, I prefer numbers..</p>
+            <p>In a world full of opinions, I prefer numbers.</p>
             <div class="social-links" style="justify-content: center; margin-top: 30px;">
-                <a href="https://www.linkedin.com/in/martin-chauke" target="_blank" aria-label="LinkedIn" ><i class="fab fa-linkedin-in"></i></a>
-                
+                <a href="https://www.linkedin.com/in/martin-chauke" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.kaggle.com/martinchauke13" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+            </div>
             <div class="copyright">
                 &copy; 2026 Martin Chauke. All rights reserved.
             </div>
